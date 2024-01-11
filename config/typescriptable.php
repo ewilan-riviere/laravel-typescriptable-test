@@ -1,12 +1,15 @@
 <?php
 
-use App\Models\SushiTest;
-
 return [
     /**
      * The path to the output directory.
      */
     'output_path' => resource_path('js'),
+
+    /**
+     * The prefix for the database tables.
+     */
+    'database_prefix' => env('DB_PREFIX', ''),
 
     /**
      * Options for the models.
@@ -27,7 +30,6 @@ return [
          */
         'skip' => [
             // 'App\\Models\\User',
-            SushiTest::class,
         ],
         /**
          * Whether to add the LaravelPaginate type (with API type and view type).
@@ -69,6 +71,7 @@ return [
          */
         'skip' => [
             'name' => [
+                '__clockwork.*',
                 'debugbar.*',
                 'horizon.*',
                 'telescope.*',
